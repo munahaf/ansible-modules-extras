@@ -1530,7 +1530,7 @@ class Host(LogicMonitor):
         if description:
             h["description"] = description
 
-        if groups is not None and groups is not []:
+        if groups is not None and groups != []:
             self.module.debug("Group property exists")
             groupids = ""
 
@@ -1539,7 +1539,7 @@ class Host(LogicMonitor):
 
             h["hostGroupIds"] = groupids.rstrip(',')
 
-        if properties is not None and properties is not {}:
+        if properties is not None and properties != {}:
             self.module.debug("Properties hash exists")
             propnum = 0
             for key, value in properties.iteritems():
